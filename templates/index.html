@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+    <div class="container" style="display: flex; justify-content: center; margin-top: 1em;">
+
+        <div class="navigation" style="width: 70%">
+            <nav>
+              <ul class="nav-type" style="justify-content: center;">
+                <li><a href="https://codepen.io/EneergeticTomy/" target="_blank" class="active" style="font-family: 'Allerta'">Home</a></li>
+                <li><a href="https://codepen.io/TomikaBoy/full/LqMpaE" target="_blank" class="active1" style="font-family: 'Allerta'">Start</a></li>
+                <li><a href="https://codepen.io/" target="_blank" class="active2" style="font-family: 'Allerta'">Journeys</a></li>
+                <li><a href="https://w3schools.com/" target="_blank" class="active3" style="font-family: 'Allerta'">SignOut</a></li>
+                <div class="line"></div>
+                <li><a><i class="fa fa-search" onclick="show()">
+                  </i></a></li>
+              </ul>
+            </nav>
+        </div>
+
+    </div>
+    <div style="margin-top: 2em;">
+        <div>
+            <div class="row" >
+                {% for i in journeys %}
+                    
+                    <div class="column">
+                    <div class="card">
+                        <h3 style="font-family: 'Allerta';font-size: 22px;">{{i.name}}</h3>
+                        
+                        <div style="text-align: left; margin-top: 1em;">
+
+                            <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-flag"></i></a>  Milestones: 3/15</p>
+                            <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-calendar"></i></a> ihihihi</p>
+                            
+                            <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-user"></i></a> Mbulelo Pani</p>
+
+                        </div>
+                        <div style="justify-content: center; display: flex;">
+
+                            <p style="font-family: 'Allerta'; font-size: 18px; padding: 7px;"><a class="active" href="#"><i class="fa fa-pencil"></i></a></p>
+                            <p style="font-family: 'Allerta'; font-size: 18px; padding: 7px;"><a class="active" href="#"><i class="fa fa-trash"></i></a></p>
+                            
+
+                        </div>
+                    </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
