@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/Journey.css' %}">
+    <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <h1>{{journey.name}}</h1>
+    </div>
+    
+    <div class="row">
+        <div class="col-3 col-s-3 menu">
+            <ul>
+                <li>The Flight</li>
+                <li>The City</li>
+                <li>The Island</li>
+                <li>The Food</li>
+            </ul>
+        </div>
+    
+        <div class="col-6 col-s-9">
+            {% for chapter in chapters %}
+            <h1 style="font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 42px; color: #3f3e3e;">{{chapter.title}}</h1>
+            <p style="font-family: sohne, 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 42px; font-weight: 900;">{{chapter.body|linebreaks}}</p>
+            {% endfor %}
+        </div>
+    
+        <div class="col-3 col-s-12">
+            <div class="aside">
+                <h2>What?</h2>
+                <p>Chania is a city on the island of Crete.</p>
+                <h2>Where?</h2>
+                <p>Crete is a Greek island in the Mediterranean Sea.</p>
+                <h2>How?</h2>
+                <p>You can reach Chania airport from all over Europe.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>Resize the browser window to see how the content respond to the resizing.</p>
+    </div>
+
+
+</body>
+
+</html>
