@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{%load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document</title>
+    <style>
+    .form-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Adjust the height as needed for your layout */
+    }
+
+    /* Style the blue button */
+    .blue-button {
+        background-color: blue;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Style the form placeholders */
+    input[type="text"]::placeholder,
+    input[type="email"]::placeholder,
+    textarea::placeholder {
+        color: #999; /* Adjust the placeholder color */
+    }
+</style>
+</head>
+<body>
+<div class="form-container">
+    <form method="POST" action="{% url 'journey' pk=form.instance %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Submit" class="blue-button">
+    </form>
+</div>
+</body>
+</html>

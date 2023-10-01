@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/card.css' %}">
+    <link rel="stylesheet" href="{% static 'css/nav.css' %}">
+
     <link href='https://fonts.googleapis.com/css?family=Allerta' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -14,53 +17,60 @@
 <body>
     <div class="container" style="display: flex; justify-content: center; margin-top: 1em;">
 
-        <div class="navigation" style="width: 70%">
-            <nav>
-              <ul class="nav-type" style="justify-content: center;">
-                <li><a href="https://codepen.io/EneergeticTomy/" target="_blank" class="active" style="font-family: 'Allerta'">Home</a></li>
-                <li><a href="https://codepen.io/TomikaBoy/full/LqMpaE" target="_blank" class="active1" style="font-family: 'Allerta'">Start</a></li>
-                <li><a href="https://codepen.io/" target="_blank" class="active2" style="font-family: 'Allerta'">Journeys</a></li>
-                <li><a href="https://w3schools.com/" target="_blank" class="active3" style="font-family: 'Allerta'">SignOut</a></li>
-                <div class="line"></div>
-                <li><a><i class="fa fa-search" onclick="show()">
-                  </i></a></li>
-              </ul>
-            </nav>
-        </div>
+        <div class="menu-button">Menu</div>
+        <ul class="flexnav" data-breakpoint="800" style="color: red">
+            <li><a href="#">Home</a></li>
+            
+            <li><a href="/startJourney">Start</a></li>
+            <li><a href="#">Journeys</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
 
     </div>
-    <div style="margin-top: 2em;">
+    <div class="card-section" style="margin-top: 5em;">
+            <div style="text-align: center; font-family: 'Muli', sans-serif;">
+                <h1 style="display: inline; margin: 0;">Most recent</h1>
+                <h4 style="display: inline; margin: 0;">2023/09/14</h6>
+            </div>
+        
+            <div>
+                <div style="text-align: center; font-family: 'Muli', sans-serif;">
+
+                           <div class="aCard" style="display: flex; justify-content: space-between; box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); background-color: #fff; border-radius: 10px; width: 55%; margin: auto; margin-top: 3em;">
+                                <div class="aCardTitle" style="flex: 1; padding: 30px; text-align: left; max-width: 48%; background-color: #2A265F; color: white;">
+                                    <div style="margin-left: 1em;">
+                                        <h5>Notes</h5>
+                                        <h1 style="font-size: 36px;">Javascript</h1>
+                                        <h5 style="margin-top: 1em;">Started: 4 weeks ago</h5>
+                                    </div>
+                                </div>
+                                <div class="aCardTitle" style="flex: 1; padding: 30px; text-align: left; max-width: 48%; padding-left:1px">
+                                    <div>
+                                        <h5>Goal 3/7</h5>
+                                        <h1>Asynchronous functions</h1>
+                                        <div style="text-align: right; padding-bottom: 0px;">
+                                            <div style="margin-top: 2em; display: inline-block; padding: 12px 25px; background-color: #2A265F; color: white;">
+                                               Continue 
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                </div>
+                
+            </div>    
+            
+        </div>
         <div>
-            <div class="row" >
-                {% for i in journeys %}
-                    
-                    <div class="column">
-                        <div class="card">
-                            <h3 style="font-family: 'Allerta'; font-size: 22px;">
-                                <a href="/journey/{{i.id}}">{{i.name}}</a>
-                            </h3>
-                            
-                            <div style="text-align: left; margin-top: 1em;">
-
-                                <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-flag"></i></a>  Milestones: 3/15</p>
-                                <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-calendar"></i></a> {{ i.start_date}}</p>
-                                
-                                <p style="font-family: 'Allerta'; font-size: 12px;"><a class="active" href="#"><i class="fa fa-user"></i></a> Mbulelo Pani</p>
-
-                            </div>
-                            <div style="justify-content: center; display: flex;">
-
-                                <p style="font-family: 'Allerta'; font-size: 18px; padding: 7px;"><a class="active" href="#"><i class="fa fa-pencil"></i></a></p>
-                                <p style="font-family: 'Allerta'; font-size: 18px; padding: 7px;"><a class="active" href="#"><i class="fa fa-trash"></i></a></p>
-                                
-
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
+            <div style="margin-top: 3em; text-align: center; padding-bottom: 0px; font-family: 'Muli', sans-serif;">
+                <div style="font-size: 18px;margin-top: 2em; display: inline-block; padding: 12px 25px; background-color: #2A265F; color: white;">
+                    <a href="/all" style="color: white;">View All</a> 
+                </div>
+            
             </div>
         </div>
-
     </div>
 </body>
 </html>
